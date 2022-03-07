@@ -3,14 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutModule } from './about';
 
 import { APP_ENUMS } from './app-routes.enum';
-import { LOGIN } from './login.routes';
 
 enum APP_ENUM {
     home = 'home',
 }
 
 export const APP_ROUTES: Routes = [
-    ...LOGIN,
     {
         path: 'about',
         loadChildren: (): Promise<AboutModule> => import('./about/about.module').then((m) => m.AboutModule),
